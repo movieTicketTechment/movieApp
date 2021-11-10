@@ -1,0 +1,236 @@
+  <!-- LATEST MOVIES SECTION -->
+  <div class="section">
+    <div class="container">
+        <div class="section-header">
+            Up Coming Movies
+        </div>
+        <div class="movies-slide carousel-nav-center owl-carousel">
+            <!-- MOVIE ITEM -->
+            <a  class="movie-item hideBtn" *ngFor= "let heroMovie of heroHome">
+               
+                <img src="{{'data:image/jpeg;base64,'+ heroMovie.picByte}}" />     
+                <div class="movie-item-content">
+                    <div class="movie-item-title">
+                        {{heroMovie.movieName}}
+                    </div>
+                    <div class="movie-infos">
+                        <div class="movie-info">
+                            <i class="bx bxs-star"></i>
+                            <span>{{heroMovie.movieGenere}}</span>
+                        </div>
+                        <div class="movie-info">
+                            <i class="bx bxs-time"></i>
+                            <span>{{heroMovie.movieHours}}</span>
+                        </div>
+                        <div class="movie-info">
+                            <span>HD</span>
+                        </div>
+                        <div class="movie-info">
+                            <span>16+</span>
+                        </div>
+                        <div class="item-action top-down delay-6 hiddenBtn">
+                            <a class="btn btn-hover"  (click)=bookTicketSec(heroMovie.movieId)>
+                                <i class="bx bxs-right-arrow"></i>
+                                <span>Book now</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <!-- END MOVIE ITEM -->
+            <!-- MOVIE ITEM -->
+            <!-- <a href="#" class="movie-item hideBtn">
+                <img src="assets/Home-img/transformer.jpg" alt="">
+                <div class="movie-item-content">
+                    <div class="movie-item-title">
+                        Transformer
+                    </div>
+                    <div class="movie-infos">
+                        <div class="movie-info">
+                            <i class="bx bxs-star"></i>
+                            <span>9.5</span>
+                        </div>
+                        <div class="movie-info">
+                            <i class="bx bxs-time"></i>
+                            <span>120 mins</span>
+                        </div>
+                        <div class="movie-info">
+                            <span>HD</span>
+                        </div>
+                        <div class="movie-info">
+                            <span>16+</span>
+                        </div>
+                        <div class="item-action top-down delay-6 hiddenBtn">
+                            <a href="#" class="btn btn-hover">
+                                <i class="bx bxs-right-arrow"></i>
+                                <span>Book now</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </a> -->
+            <!-- END MOVIE ITEM -->
+            <!-- MOVIE ITEM -->
+            <!-- <a href="#" class="movie-item hideBtn">
+                <img src="assets/Home-img/resident-evil.jpg" alt="">
+                <div class="movie-item-content">
+                    <div class="movie-item-title">
+                        Resident Evil
+                    </div>
+                    <div class="movie-infos">
+                        <div class="movie-info">
+                            <i class="bx bxs-star"></i>
+                            <span>9.5</span>
+                        </div>
+                        <div class="movie-info">
+                            <i class="bx bxs-time"></i>
+                            <span>120 mins</span>
+                        </div>
+                        <div class="movie-info">
+                            <span>HD</span>
+                        </div>
+                        <div class="movie-info">
+                            <span>16+</span>
+                        </div>
+                        <div class="item-action top-down delay-6 hiddenBtn">
+                            <a href="#" class="btn btn-hover">
+                                <i class="bx bxs-right-arrow"></i>
+                                <span>Book now</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </a> -->
+            <!-- END MOVIE ITEM -->
+            <!-- MOVIE ITEM -->
+            <!-- <a href="#" class="movie-item hideBtn">
+                <img src="assets/Home-img/captain-marvel.png" alt="">
+                <div class="movie-item-content">
+                    <div class="movie-item-title">
+                        Captain Marvel
+                    </div>
+                    <div class="movie-infos">
+                        <div class="movie-info">
+                            <i class="bx bxs-star"></i>
+                            <span>9.5</span>
+                        </div>
+                        <div class="movie-info">
+                            <i class="bx bxs-time"></i>
+                            <span>120 mins</span>
+                        </div>
+                        <div class="movie-info">
+                            <span>HD</span>
+                        </div>
+                        <div class="movie-info">
+                            <span>16+</span>
+                        </div>
+                        <div class="item-action top-down delay-6 hiddenBtn">
+                            <a href="#" class="btn btn-hover">
+                                <i class="bx bxs-right-arrow"></i>
+                                <span>Book now</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </a> -->
+            <!-- END MOVIE ITEM -->
+            <!-- MOVIE ITEM -->
+            <!-- <a href="#" class="movie-item hideBtn">
+                <img src="assets/Home-img/hunter-killer.jpg" alt="">
+                <div class="movie-item-content">
+                    <div class="movie-item-title">
+                        Hunter Killer
+                    </div>
+                    <div class="movie-infos">
+                        <div class="movie-info">
+                            <i class="bx bxs-star"></i>
+                            <span>9.5</span>
+                        </div>
+                        <div class="movie-info">
+                            <i class="bx bxs-time"></i>
+                            <span>120 mins</span>
+                        </div>
+                        <div class="movie-info">
+                            <span>HD</span>
+                        </div>
+                        <div class="movie-info">
+                            <span>16+</span>
+                        </div>
+                        <div class="item-action top-down delay-6 hiddenBtn">
+                            <a href="#" class="btn btn-hover">
+                                <i class="bx bxs-right-arrow"></i>
+                                <span>Book now</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </a> -->
+            <!-- END MOVIE ITEM -->
+            <!-- MOVIE ITEM -->
+            <!-- <a href="#" class="movie-item hideBtn">
+                <img src="assets/Home-img/blood-shot.jpg" alt="">
+                <div class="movie-item-content">
+                    <div class="movie-item-title">
+                        Bloodshot
+                    </div>
+                    <div class="movie-infos">
+                        <div class="movie-info">
+                            <i class="bx bxs-star"></i>
+                            <span>9.5</span>
+                        </div>
+                        <div class="movie-info">
+                            <i class="bx bxs-time"></i>
+                            <span>120 mins</span>
+                        </div>
+                        <div class="movie-info">
+                            <span>HD</span>
+                        </div>
+                        <div class="movie-info">
+                            <span>16+</span>
+                        </div>
+                        <div class="item-action top-down delay-6 hiddenBtn">
+                            <a href="#" class="btn btn-hover">
+                                <i class="bx bxs-right-arrow"></i>
+                                <span>Book now</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </a> -->
+            <!-- END MOVIE ITEM -->
+            <!-- MOVIE ITEM -->
+            <!-- <a href="#" class="movie-item hideBtn">
+                <img src="assets/Home-img/movies/call.jpg" alt="">
+                <div class="movie-item-content">
+                    <div class="movie-item-title">
+                        Call
+                    </div>
+                    <div class="movie-infos">
+                        <div class="movie-info">
+                            <i class="bx bxs-star"></i>
+                            <span>9.5</span>
+                        </div>
+                        <div class="movie-info">
+                            <i class="bx bxs-time"></i>
+                            <span>120 mins</span>
+                        </div>
+                        <div class="movie-info">
+                            <span>HD</span>
+                        </div>
+                        <div class="movie-info">
+                            <span>16+</span>
+                        </div>
+                        <div class="item-action top-down delay-6 hiddenBtn">
+                            <a href="#" class="btn btn-hover">
+                                <i class="bx bxs-right-arrow"></i>
+                                <span>Book now</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </a> -->
+            <!-- END MOVIE ITEM -->
+        </div>
+    </div>
+</div>
+<!-- END LATEST MOVIES SECTION -->

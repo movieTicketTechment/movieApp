@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="col-md-6 mx-auto padding">
+      <h2 class="text-center">Enter Movie Details</h2>
+    <form #frm="ngForm" (ngSubmit)="createMovie()">
+  
+     
+    
+    <div>
+      <input type="text" placeholder="Enter movie name" id="name" #moviename="ngModel" name="name" [(ngModel)]="movie.movieName"  class="form-control" required >
+      <div class="alert alert-danger" *ngIf="moviename.invalid&&moviename.touched ">movie name is required </div> 
+    </div>
+    <br>
+    <div>      
+      <input type="text" placeholder="Enter Movie Genre" id="movieGenre" #movieGenre="ngModel" name="movieGenre" [(ngModel)]="movie.movieGenre"   class="form-control" required>
+      <div class="alert alert-danger" *ngIf="movieGenre.invalid&&movieGenre.touched ">movie Genre is required </div>   
+    </div>
+    <br>
+    <div>      
+        <input type="text" placeholder="Enter movie Hours " id="movieHours" #movieHours="ngModel" name="movieHours" [(ngModel)]="movie.movieHours"   class="form-control" required>
+        <div class="alert alert-danger" *ngIf="movieHours.invalid&&movieHours.touched ">Movie Hours is required </div>   
+      </div>
+      <br>
+      
+      <div>      
+        <input type="text" placeholder="Enter Movie releaseDate" id="releaseDate" #releaseDate="ngModel" name="releaseDate" [(ngModel)]="movie.releaseDate"   class="form-control" required>
+        <div class="alert alert-danger" *ngIf="releaseDate.invalid&&releaseDate.touched ">Movie releaseDate required </div>   
+      </div>
+      <div>
+      <br>  
+        <input type="text" placeholder="Enter Movie Descriptiont number" id="movieDescription" #movieDescription="ngModel" name="movieDescription" [(ngModel)]="movie.movieDescription"   class="form-control" required>
+        <div class="alert alert-danger" *ngIf="movieDescription.invalid&&movieDescription.touched ">Movie Description is required </div>   
+      </div>
+      <br>
+
+      
+    <div>
+    <input type="submit" value="Add movie" class="btn btn-danger" [disabled]="!frm.valid" >
+  </div>
+  </form>
+     
+  </div>
+  
+  </div>

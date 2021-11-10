@@ -1,0 +1,125 @@
+<!-- NAV -->
+<div class="nav-wrapper">
+    <div class="container">
+        <div class="nav">
+            <a href="#" class="logo">
+                <i class='bx bx-movie-play bx-tada main-color'></i>Fl<span class="main-color">i</span>x
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a routerLink="/home">Home</a></li>
+                <!-- <li><a href="#">Genre</a></li>
+                <li><a href="#">Movies</a></li>
+                <li><a href="#">Series</a></li> -->
+                <li><a href="#">About</a></li>
+                <li> 
+                    <select  class="form-select" (change)="selectChangeHandler($event)">
+                        <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
+                        <option selected>Select Your City</option>
+                        <option *ngFor="let order of city; " [ngValue]="city">
+                            {{order.name}} </option>
+                    </select>
+                </li>
+                <li *ngIf="socialUserFound">
+                    <a href="#" class="btn btn-hover" data-bs-toggle="modal" data-bs-target="#signInModal">
+                        <span >Sign in</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#" >
+                        <div class="profile-container" *ngIf="socialUser" id="dropShow">
+                           
+                            <img class="profile-picture" src={{socialUser.photoUrl}} alt="">
+                         
+                            <div class="profile-text-container dropdown">
+                                <span class="profile-text">{{socialUser.name}}</span>
+                                <i class="fas fa-caret-down" ></i> 
+                                  <div >
+                                    <ul class="dropdown-menu drophide" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item"> {{socialUser.email}}</a></li>
+                                        <li> <a (click)="signOut()">   Sign out </a></li>
+                                      
+                                      </ul>
+                                </div>
+                              
+                                  
+                            </div>
+                        </div>
+
+                        <div class="profile-container" *ngIf="loginBool" id="dropShow">
+                           
+                            <img class="profile-picture" src="assets/Home-img/cartoons/coco.jpg" alt="">
+                         
+                            <div class="profile-text-container dropdown">
+                                <span class="profile-text">{{socialLocal.userName}}</span>
+                                <i class="fas fa-caret-down" ></i> 
+                                  <div >
+                                    <ul class="dropdown-menu drophide" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item"> {{socialLocal.userEmail}}</a></li>
+                                        <li> <a (click)="signLocalOut()">   Sign out </a></li>
+                                      
+                                      </ul>
+                                </div>
+                              
+                                  
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <!-- MOBILE MENU TOGGLE -->
+            <div class="hamburger-menu" id="hamburger-menu">
+                <div class="hamburger"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END NAV -->
+
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="signInModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" >
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel" >Get Started</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" >
+
+            <button type="button"  class="btn btn-outline-light  social-login" routerLink="/login"><i class='bx bx-movie-play bx-tada main-color'></i> Log in</button>
+
+            <div class="social-media">
+                
+                <button type="button"  class="btn btn-outline-light social-login"><img alt="facebook logo" src="//in.bmscdn.com/webin/common/icons/facebook.svg"> Continue with facebook</button>
+            </div>
+
+            <div class="social-media"> 
+
+                <button type="button"  class="btn btn-outline-light social-login" 
+                 (click)="signInWithGoogle()"><img alt="google logo" src="//in.bmscdn.com/webin/common/icons/googlelogo.svg"> Continue with google</button>
+            </div>
+            <div>
+                --------------------or-------------------
+            </div>
+            <div>
+                
+                <button type="button"  class="btn btn-outline-light  social-login" routerLink="/register"><i class='bx bx-movie-play bx-tada main-color'></i> Register with us</button>
+
+                
+
+            </div>
+           
+        </div>
+        <div class="modal-footer">
+                <span>I agree to the <u style="cursor: pointer;"> terms & condition</u> </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal end -->
+
+
+  

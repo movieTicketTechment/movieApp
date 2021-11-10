@@ -1,0 +1,277 @@
+<section class="content" id ="#theatres">
+  <h1>Theatres</h1>
+    <div class="container-fluid">
+      <!-- Info boxes -->
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="info-box">
+            <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">CPU Traffic</span>
+              <span class="info-box-number">
+                10
+                <small>%</small>
+              </span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="info-box mb-3">
+            <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Likes</span>
+              <span class="info-box-number">41,410</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+
+        <!-- fix for small devices only -->
+        <div class="clearfix hidden-md-up"></div>
+
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="info-box mb-3">
+            <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Sales</span>
+              <span class="info-box-number">760</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="info-box mb-3">
+            <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Total Theatres </span>
+              <span class="info-box-number">{{theatres.length}}</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+
+     
+      <!-- /.row -->
+
+      <!-- Main row -->
+      <div class="row">
+        <!-- Left col -->
+        <div class="col-md-12">
+         
+          <!-- TABLE:  Theatres -->
+          <div class="card">
+            <div class="card-header border-transparent">
+              <h3 class="card-title">Theatres</h3>
+
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                  <i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="remove">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+            <!-- {{theatres|json}} -->
+            <!-- /.card-header -->
+            <div class="card-body p-0">
+              <div class="table-responsive">
+                <table class="table m-0">
+                  <thead>
+                  <tr >
+                    <th>Serial Number</th>
+                    <th>Theatre Name</th>
+                    <th>City</th>
+                    <th>Manager Name</th>
+                    <th>Manager Contact</th>
+                    <th>Action</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let theatre of theatres let i = index">
+                    <td><a >{{i+1}}</a></td>
+                    <td>{{theatre.theatreName }}</td>
+                    <td>{{theatre.theatreCity }}</td>
+                    <td>{{theatre.managerName}}</td>
+                    <td>{{theatre.managerContact}}</td> 
+                    <td>
+                      <button type="button" class="btn btn-tool"  data-toggle="modal" data-target="#myModal" (click)="getTheatreById(theatre.theatreId)">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button type="button" class="btn btn-tool"   (click)=" deleteTheatreById(theatre.theatreId)">
+                        <i class="fas fa-trash-alt"></i>
+                      </button>
+                    </td>
+                                      
+                  </tr>
+                  
+                  </tbody>
+                </table>  
+              </div>
+              <!-- /.table-responsive -->
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer clearfix">
+              <a href="javascript:void(0)" class="btn btn-sm btn-info float-left" 
+             (click)="addTheatre()"
+              class="btn btn-success"
+              value="update">Add New Theatre</a>
+
+              <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">View All Theatre</a>
+            </div>
+            <!-- /.card-footer -->
+          </div>
+          <!-- /.card -->
+          <!-- MAP & BOX PANE -->
+                       
+          <!-- /.card -->
+          <div class="row">
+
+            <div class="col-md-12">
+              <!-- USERS LIST -->
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">Theatre Managers</h3>
+
+                  <div class="card-tools">
+                    <span class="badge badge-danger">8 New Members</span>
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                      <i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove">
+                      <i class="fas fa-times"></i>
+                    </button>
+                  </div>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body p-0">
+                  <ul class="users-list clearfix">
+                    <li>
+                      <img src="assets/img/user1-128x128.jpg" alt="User Image">
+                      <a class="users-list-name" href="#">Alexander Pierce</a>
+                      <span class="users-list-date">Today</span>
+                    </li>
+                    <li>
+                      <img src="assets/img/user8-128x128.jpg" alt="User Image">
+                      <a class="users-list-name" href="#">Norman</a>
+                      <span class="users-list-date">Yesterday</span>
+                    </li>
+                    <li>
+                      <img src="assets/img/user7-128x128.jpg" alt="User Image">
+                      <a class="users-list-name" href="#">Jane</a>
+                      <span class="users-list-date">12 Jan</span>
+                    </li>
+                    <li>
+                      <img src="assets/img/user6-128x128.jpg" alt="User Image">
+                      <a class="users-list-name" href="#">John</a>
+                      <span class="users-list-date">12 Jan</span>
+                    </li>
+                    <li>
+                      <img src="assets/img/user2-160x160.jpg" alt="User Image">
+                      <a class="users-list-name" href="#">Alexander</a>
+                      <span class="users-list-date">13 Jan</span>
+                    </li>
+                    <li>
+                      <img src="assets/img/user5-128x128.jpg" alt="User Image">
+                      <a class="users-list-name" href="#">Sarah</a>
+                      <span class="users-list-date">14 Jan</span>
+                    </li>
+                    <li>
+                      <img src="assets/img/user4-128x128.jpg" alt="User Image">
+                      <a class="users-list-name" href="#">Nora</a>
+                      <span class="users-list-date">15 Jan</span>
+                    </li>
+                    <li>
+                      <img src="assets/img/user3-128x128.jpg" alt="User Image">
+                      <a class="users-list-name" href="#">Nadia</a>
+                      <span class="users-list-date">15 Jan</span>
+                    </li>
+                    
+                  </ul>
+                  <!-- /.users-list -->
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer text-center">
+                  <a href="javascript:">View All Theatre Managers</a>
+                </div>
+                <!-- /.card-footer -->
+              </div>
+              <!--/.card -->
+            </div>
+            <!-- /.col -->
+
+           
+
+           
+          </div>
+          <!-- /.row -->
+
+         
+        </div>
+        <!-- /.col -->
+
+       
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div><!--/. container-fluid -->
+  </section>
+
+  <div class="modal" id="myModal">  
+    <div class="modal-dialog">
+      <div class="modal-content">  
+        <form #frm="ngForm" (ngSubmit)="updateTheatre()">
+             <!-- Modal Header -->  
+             <div class="modal-header">  
+              <h4 class="modal-title" style="text-align: center">Update Theatre Details</h4>  
+             </div> 
+            <!-- Modal body -->  
+            
+            <div class="modal-body" >
+              <div>
+                <input type="text" placeholder="Enter Theatre name" id="name" #theatrename="ngModel" name="name" [(ngModel)]="theatreGet.theatreName"  class="form-control" required >
+                <div class="alert alert-danger" *ngIf="theatrename.invalid&&theatrename.touched ">Theatre name is required </div> 
+              </div>
+              <br>
+              <div>      
+                <input type="text" placeholder="Enter city name" id="theatreCity" #theatrecity="ngModel" name="city" [(ngModel)]="theatreGet.theatreCity"   class="form-control" required>
+                <div class="alert alert-danger" *ngIf="theatrecity.invalid&&theatrecity.touched ">Theatre city is required </div>   
+              </div>
+              <br>
+              <div>      
+                  <input type="text" placeholder="Enter Manager Name" id="managerName" #managerName="ngModel" name="managerName" [(ngModel)]="theatreGet.managerName"   class="form-control" required>
+                  <div class="alert alert-danger" *ngIf="managerName.invalid&&managerName.touched ">Theatre managerName is required </div>   
+                </div>
+                <br>
+                <div>      
+                  <input type="text" placeholder="Enter Manager contact number" id="managerContact" #managerContact="ngModel" name="managerContact" [(ngModel)]="theatreGet.managerContact"   class="form-control" required>
+                  <div class="alert alert-danger" *ngIf="managerContact.invalid&&managerContact.touched ">Manager Contact number is required </div>   
+                </div>
+                <br>
+                <input type="text"  id="deleteField" #deleteField="ngModel" name="deleteField" [(ngModel)]="theatreGet.deleteField"  ng-value="y" class="form-control" required>
+                
+              <div>
+              <input type="submit" value="Add Theatre" class="btn btn-danger"  >
+            </div>
+
+            </div>
+
+        </form>
+      </div>
+    </div>
+  </div>

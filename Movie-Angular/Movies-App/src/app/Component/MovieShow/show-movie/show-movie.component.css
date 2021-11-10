@@ -1,0 +1,127 @@
+:root{
+    margin: 0px;
+    padding: 0px;
+
+}
+nav{
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    height: 150px;
+}
+.nav-item1{
+    display: grid;
+    grid-template-columns: repeat(auto, auto);
+}
+
+.nav-flex-item1{
+   font-size: 35px;
+    padding: 12px;
+}
+.nav-flex-item1:hover{
+    text-decoration: underline;
+}
+.nav-flex-item2{
+    display: flex;
+}
+.nav-flex-item2 button{
+    border-radius: 50px;
+    color: black;
+    width: 50px;
+    border: 2px;
+   
+}
+.nav-flex-item2 button:hover{
+    border-radius: 50px;
+    color: black;
+    width: 50px;
+    border: 2px;
+    font-size: 15px;
+   
+}
+.nav-flex-item2h{
+    /* padding: 12px 12px; */
+    margin: 0px 5px;
+}
+
+.nav-item2 img{
+    align-content: right!important;
+    height: 100px;
+    width: 100px;
+    padding: 12px 12px;
+    margin: 10px;
+    border-radius: 50%;
+    background-color: honeydew;
+}
+.container{
+    display: grid;
+    
+}
+.container-item1{
+    display: grid;
+    color: brown;
+    padding: 15px;
+    width: 100%;
+    grid-template-columns: repeat(5,2fr);
+    background-color: blanchedalmond;
+    
+} 
+.container-item2{
+    display: grid;
+    color: black;
+    padding: 15px;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 2fr 4fr 2fr;
+    grid-row: auto;
+    background-color: white;
+}
+.container-item2 .item-2 .fas{
+    color: green;
+}
+.container-item2 #item6 .fas {
+    color: red;
+}
+.container-item3 , .container-item4{
+    display: grid;
+    color: black;
+    padding: 15px;
+    width: 100%;
+    grid-template-columns:  2fr 1fr 6fr;
+    background-color: white;
+}
+.container-item3 .info-icon , .container-item4 .info-icon{ 
+    color: green;
+}
+.flex-container{
+    display: flex;
+}
+.flex-item{
+    padding: 15px;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+}
+.flex-item button{
+    border-radius: 5px;
+    color: green;
+    width: 120px;
+    padding: 8px;
+    font-size: 16px;
+    background-color: blanchedalmond;
+}
+.flex-item button:hover{
+    border-radius: 10px;
+    color:white;
+    width: 120px;
+    padding: 8px;
+    font-size: 20px;
+    background-color: black;
+}
+.cancle .fas{
+    color: green;
+    flex-direction: column;
+}
+.fa-heart{
+ font-size: 16px;
+ color: red;
+ padding: 5px;
+}
+

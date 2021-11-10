@@ -1,0 +1,181 @@
+.section {
+    padding-top: 0px;
+    max-width: 70%;
+    margin: auto;
+}
+
+.hero-slide-item {
+    padding-top: 20%;
+
+}
+
+.cont{
+    /* max-width: 30%;
+    margin: auto; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+td{
+    padding: 5px 3px;
+}
+
+table button{
+    background-color: greenyellow;
+}
+
+#right{
+    float: right;
+}
+
+
+
+.seat {
+    width: 35px;
+    height: 45px;
+    border-radius: 7px;
+    display: block;
+    background: linear-gradient(0deg,#c5c5c5,#c5c5c5,#c5c5c5,#c5c5c5,#c5c5c5,#eee,#fff);
+    margin: -30px 2px 10px 2px;
+    cursor: pointer;
+    position: relative;
+    transition: all .2s ease-in-out;
+    color: black;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.seat:hover {
+    transform: translateY(-7px);
+    transition: all .2s ease-in-out;
+    background: linear-gradient(
+        0deg,#ffce26,#ffce26,#ffce26,#ff0);
+        
+}
+
+
+
+.popScreen{
+    z-index: 100;
+    position: fixed;
+    bottom: 0;
+    left: 15vw;
+    max-width: 70%;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    /* display: flex; */
+
+}
+
+#popScreenHide{
+    display: none;
+}
+
+.popUpSeat{
+    box-sizing: border-box;
+    padding: 5px 30px;
+    background: #fff;
+    border-radius: 10px;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+}
+.seatInfo{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.seatAll{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+
+}
+
+.seatAll span{
+    background: var(--main-color);
+    color: #fff;
+    text-transform: uppercase;
+    font-size: .9rem;
+    font-weight: 500;
+    line-height: 1;
+    border-radius: 6px;
+    min-width: 35px;
+    min-height: 35px;
+    padding: .7em .5em;
+    margin-right: .8em;
+}
+
+.totalPrice{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around   ;
+}
+
+.totalPrice span{
+    padding-right: 10px;
+    border-right: 2px solid var(--main-color);
+}
+
+.totalPrice h3{
+    font-size: 40px;
+}
+
+#arrowRight{
+    display: inline-block;
+    font-size: 40px;
+    color: var(--main-color);
+    margin-left: 30px;
+    transition: all .5s;
+    cursor: pointer;
+}
+
+#arrowRight:hover{
+  
+   transform: translateX(7px);
+}
+
+.disable{
+    width: 35px;
+    height: 45px;
+    border-radius: 7px;
+    display: block;
+    background: linear-gradient(0deg,#535353,#535353,#535353,gray,gray);
+    margin: -30px 2px 10px 2px;
+    cursor: pointer;
+    position: relative;
+    color: black;
+    text-align: center;
+    padding-top: 5px;
+    pointer-events : none;
+
+}
+/* 
+.disable::before{
+    content: "";
+   
+    width: 35px;
+    height: 45px;
+    border-radius: 7px;
+    display: block;
+    background: #e65555;
+    pointer-events : none;
+    cursor: not-allowed!Important;
+
+    position: relative;
+    color: black;
+    text-align: center;
+    padding-top: 5px;
+    position: absolute;
+    top: 0;
+
+} */

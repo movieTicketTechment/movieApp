@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="col-md-6 mx-auto padding">
+      <h2 class="text-center">Enter Theatre Details</h2>
+    <form #frm="ngForm" (ngSubmit)="createTheatre()">
+  
+     
+    
+    <div>
+      <input type="text" placeholder="Enter Theatre name" id="name" #theatrename="ngModel" name="name" [(ngModel)]="theatre.theatreName"  class="form-control" required >
+      <div class="alert alert-danger" *ngIf="theatrename.invalid&&theatrename.touched ">Theatre name is required </div> 
+    </div>
+    <br>
+    <div>      
+      <input type="text" placeholder="Enter city name" id="theatreCity" #theatrecity="ngModel" name="dept" [(ngModel)]="theatre.theatreCity"   class="form-control" required>
+      <div class="alert alert-danger" *ngIf="theatrecity.invalid&&theatrecity.touched ">Theatre city is required </div>   
+    </div>
+    <br>
+    <div>      
+        <input type="text" placeholder="Enter Manager Name" id="managerName" #managerName="ngModel" name="dept" [(ngModel)]="theatre.managerName"   class="form-control" required>
+        <div class="alert alert-danger" *ngIf="managerName.invalid&&managerName.touched ">Theatre managerName is required </div>   
+      </div>
+      <br>
+      <div>      
+        <input type="text" placeholder="Enter Manager contact number" id="managerContact" #managerContact="ngModel" name="dept" [(ngModel)]="theatre.managerContact"   class="form-control" required>
+        <div class="alert alert-danger" *ngIf="managerContact.invalid&&managerContact.touched ">Manager Contact number is required </div>   
+      </div>
+      <br>
+
+      
+    <div>
+    <input type="submit" value="Add Theatre" class="btn btn-danger" [disabled]="!frm.valid" >
+  </div>
+  </form>
+     
+  </div>
+  
+  </div>

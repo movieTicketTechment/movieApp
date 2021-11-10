@@ -1,0 +1,84 @@
+<!--========== Screen  ===========-->
+<div class="section">
+    <div class="hero-slide-item">
+        <img src="assets/Home-img/transformer-banner.jpg" alt="">
+
+        <div class="hero-slide-item-content">
+            <div class="item-content-wraper">
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--=========== END Screen MOVIE SECTION ========-->
+
+<div class="container">
+
+
+
+    <div class="container">
+    
+
+
+        <div class="cont" style="margin-top: 50px;">
+
+            <table style="float: left;margin: -53px 20px 0 0">
+                <tr *ngFor="let a of alphaTable">
+                    <td style="padding-top: 10px; text-align: center;">
+                        <span>{{a}}</span>
+                    </td>
+                </tr>
+            </table>
+
+
+
+            <table id="seatLayout">
+
+
+                <tr *ngFor="let r of rowTable">
+                    <td *ngFor="let c of colTable">
+                        <!-- <span class="seat current" [style.color]="color"  (click)="seatBooked(r,c)" id="{{r}}{{c}}" [ngClass]="{'green' : !toggle}">
+                        {{ r}}{{c}}                        
+                      </span>
+                    onclick=" this.disabled=true; this.style.background = `linear-gradient(0deg,#ffce26,#ffce26,#ffce26,#ff0)`" -->
+
+                        <span class="seat current" (click)="seatBooked(r, c)" id="seat{{r}}{{c}}">
+                            {{r}}{{c}}
+
+
+                        </span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+
+
+
+
+
+</div>
+
+<div class="popScreen" id="popScreenHide">
+    <div class="popUpSeat">
+        <div class="seatInfo">
+            <i class="uil uil-info-circle"></i>
+            <div class="seatAll">
+                <span class="seatInfo" *ngFor="let seat of seatArr">{{seat}}</span>
+            </div>
+        </div>
+        <div class="totalPrice">
+            <span>Total</span>
+            <h3>{{totalPriceSeat}}</h3>
+            <i class="uil uil-info-circle"></i>
+
+            
+        <i class="uil uil-arrow-circle-right" id="arrowRight"   (click)="insertSeat()"></i>
+        </div>
+
+    </div>
+    
+ 
+</div>

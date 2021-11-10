@@ -1,0 +1,30 @@
+  <!-- /.card-header -->
+  <div class="card-body p-0">
+    <div class="table-responsive">
+      <table class="table m-0">
+        <thead>
+        <tr >
+          <th>Serial Number</th>
+          <th>Theatre Name</th>
+          <th>City</th>
+          <th>Manager Name</th>
+          <th>Manager Contact</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let theatre of theatres let i = index">
+          <td><a >{{i+1}}</a></td>
+          <td>{{theatre.theatreName }}</td>
+          <td>{{theatre.theatreCity }}</td>
+          <td>{{theatre.managerName}}</td>
+          <td>{{theatre.managerContact}}</td> 
+                            
+        </tr>
+        
+        </tbody>
+      </table>  
+    </div>
+    <!-- /.table-responsive -->
+  </div>
+  <!-- /.card-body -->
+ 

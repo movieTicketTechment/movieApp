@@ -1,0 +1,270 @@
+<div class="wrapper">
+  <!-- Preloader -->
+  <!-- <div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__wobble" src="assets/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+  </div> -->
+
+  <!-- Navbar -->
+ <app-admin-nav-bar></app-admin-nav-bar>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->   
+  <!-- <app-admin-side-bar></app-admin-side-bar> -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="index3.html" class="brand-link">
+      <img src="assets/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">Super Admin</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="assets/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">{{userName}}</a>
+        </div>
+      </div>
+
+      <!-- SidebarSearch Form -->
+      <div class="form-inline">
+        <div class="input-group" data-widget="sidebar-search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item menu-open">
+            <a  class="nav-link active">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Dashboard
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+          
+          </li>
+          <li class="nav-item">
+            <a  class="nav-link" (click)="showSubAdminDashboard()">
+              <i class="fas fa-users-cog"></i>
+              <p>
+                Sub Admins
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right">6</span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a class="nav-link" >
+                  <i class="far fa fa-list-ol nav-icon"></i>
+                  <p>Sub Admin-list</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"  (click)="addSubAdmin()">
+                  <i class="fa fa-plus-circle nav-icon"></i>
+                  <p>Add Sub-Admin</p>
+                </a>
+              </li>
+             
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a  class="nav-link" (click)="showUserDashboard()">
+              <i class="nav-icon fas fa fa-users"></i>
+              <p>
+                Users
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right">6</span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a class="nav-link" >
+                  <i class="far fa fa-list-ol nav-icon"></i>
+                  <p>users-list</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"  (click)="addUser()">
+                  <i class="fa fa-plus-circle nav-icon"></i>
+                  <p>Add user</p>
+                </a>
+              </li>
+             
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="showTheatreDashboard()">
+              <i class="nav-icon fas fa-video"></i>
+              <p>
+                Theatre
+                <i class="fas fa-angle-left right"></i>
+                <span class="right badge badge-danger">New</span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a  class="nav-link" (click)=" viewAllTheatre()">
+                  <i class="far fa fa-list-ol nav-icon"></i>
+                  <p>Theatre-list</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a  class="nav-link" (click)="addTheatre()">
+                  <i class="fa fa-plus-circle nav-icon"></i>
+                  <p>Add Theatre</p>
+                </a>
+              </li>  
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="showMovieDashboard()">
+              <i class="nav-icon fas fa-film"></i>
+              <p>
+                Movies
+                <i class="fas fa-angle-left right"></i>
+                <span class="right badge badge-danger">New</span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a  class="nav-link" (click)="ViewAllMovieList()">
+                  <i class="far fa fa-list-ol nav-icon"></i>
+                  <p>movie-list</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a  class="nav-link" (click)="addMovie()">
+                  <i class="fa fa-plus-circle nav-icon"></i>
+                  <p>Add movie</p>
+                </a>
+              </li>
+             
+            </ul>
+          </li>                        
+          <li class="nav-item">
+            <a  class="nav-link" (click)="showBookingDashboard()">
+              <i class="fas fa-ticket-alt"></i>
+              <p>
+                Bookings
+                
+                <span class="badge badge-info right">6</span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a class="nav-link" >
+                  <i class="far fa fa-list-ol nav-icon"></i>
+                  <p>Booking-list</p>
+                </a>
+              </li>               
+             
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a  class="nav-link">
+              <i class="fas fa-tv"></i>
+              <p>
+                Shows
+                <i class="fas fa-angle-left right"></i>
+                <span class="right badge badge-danger">New</span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a class="nav-link" (click)="viewAllShowList()" >
+                  <i class="far fa fa-list-ol nav-icon"></i>
+                  <p>Shows-list</p>
+                </a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link" (click)="addShow()">
+                  <i class="fa fa-plus-circle nav-icon"></i>
+                  <p>Add Shows</p>
+                </a>
+              </li>              
+             
+            </ul>
+          </li>
+          
+         </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Dashboard</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a  (click)="showHomeDashboard()">Home</a></li>
+              <li class="breadcrumb-item"><a  (click)="showMovieDashboard()">Movies</a></li>               
+              <li class="breadcrumb-item"><a (click)="showUserDashboard()">Users</a></li>
+              <li class="breadcrumb-item"><a (click)="showSubAdminDashboard()">SubAdmins</a></li>
+              <li class="breadcrumb-item"><a (click)="showTheatreDashboard()">Theatres</a></li>
+              <li class="breadcrumb-item"><a (click)="showBookingDashboard()">Bookings</a></li>                 
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+
+    <!-- Main content -->
+
+    <router-outlet></router-outlet>
+    
+    <!-- booking section  -->      
+    <!-- <app-admin-bookings></app-admin-bookings> -->
+    <!-- end booking section -->
+
+    <!-- movie section -->
+    <!-- <app-admin-movie></app-admin-movie> -->
+    <!-- end movie section -->
+
+    <!-- theatre section -->
+    <!-- <app-admin-theatres></app-admin-theatres> -->
+    <!-- end theatre section -->
+
+    <!-- /.content -->
+
+  </div>
+  <!-- /.content-wrapper -->
+
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 3.1.0
+    </div>
+  </footer>
+</div>

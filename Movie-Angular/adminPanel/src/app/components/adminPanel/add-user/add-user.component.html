@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="col-md-6 mx-auto padding">
+      <h2 class="text-center">Enter User Details</h2>
+    <form #frm="ngForm" (ngSubmit)="createUser(); frm.resetForm()"  >     
+    
+    <div>
+      <input type="text" placeholder="Enter user name" id="name" #username="ngModel" name="name" [(ngModel)]="user.userName"  class="form-control" required >
+      <div class="alert alert-danger" *ngIf="username.invalid&&username.touched ">user name is required </div> 
+    </div>
+    <br>
+    <div>      
+      <input type="email" [email]="true" placeholder="Enter Email " id="useremail" #email="ngModel" name="dept" [(ngModel)]="user.userEmail"   class="form-control" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+      <div class="alert alert-danger" *ngIf="email.invalid&&email.touched ">valid email is required. Like: johndeo@example.com </div>   
+    </div>
+    <br>
+    <div>      
+        <input type="password" placeholder="Enter password" id="password" #password="ngModel" name="dept" [(ngModel)]="user.userPassword"   class="form-control" required>
+        <div class="alert alert-danger" *ngIf="password.invalid&&password.touched ">user password is required </div>   
+      </div>
+      <br>
+      <div>      
+        <input type="text" placeholder="Enter contact number" id="userContact" #userContact="ngModel" name="dept" [(ngModel)]="user.userMobile"   class="form-control" required>
+        <div class="alert alert-danger" *ngIf="userContact.invalid&&userContact.touched ">Contact number is required </div>   
+      </div>
+      <br>
+      <div>      
+        <input type="text" placeholder="Enter Address" id="userAddress" #userAddress="ngModel" name="dept" [(ngModel)]="user.userAddress"   class="form-control" required>
+        <div class="alert alert-danger" *ngIf="userAddress.invalid&&userAddress.touched ">Address is required </div>   
+      </div>
+      <br>
+      
+    <div>
+    <input type="submit" value="Add user" class="btn btn-danger" [disabled]="!frm.valid" >
+  </div>
+  </form>
+     
+  </div>
+  
+  </div>

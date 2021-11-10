@@ -1,0 +1,83 @@
+<div class="card-body p-0">
+    <div class="table-responsive">
+      <table class="table m-0">
+        <thead>
+        <tr>
+          <!-- <th>Booking ID</th> -->
+          <th>Serial Number</th>
+          <th>Screen Name</th>
+          <th>Theatre Name</th>
+          <th>Capacity</th>
+          <th>Manager Name</th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor='let screenList of screen; let i=index' >
+          <!-- <td><a href="pages/examples/invoice.html">OR9842</a></td> -->
+          <td><span class="badge badge-success">{{i+1}}</span></td>
+          <td>{{screenList.screenName}}</td>
+          <td>
+            <div class="sparkbar" data-color="#00a65a" data-height="20">{{screenList.theatreName}}</div>
+          </td>
+          <td>{{screenList.screenRows*screenList.screenColumns}}</td>
+          <td>{{screenList.managerName}}</td>
+          <td>
+          <button type="button" class="btn btn-tool"  data-toggle="modal" data-target="#myModal" (click)="getScreenById(screenList.screenId)">
+            <i class="fas fa-edit"></i>
+          </button>
+       <!--   <button type="button" class="btn btn-tool"  (click)=" deleteScreenById(screenList.screenId)" >
+            <i class="fas fa-trash-alt"></i>
+          </button>-->
+        </td>
+        </tr>
+        
+        </tbody>
+      </table>
+    </div>
+    <!-- /.table-responsive -->
+  </div>
+  <!-- /.card-body -->
+
+
+  <div class="modal" id="myModal">  
+    <div class="modal-dialog">
+      <div class="modal-content">  
+        <form #frm="ngForm" (ngSubmit)="updateScreen()">
+             <!-- Modal Header -->  
+             <div class="modal-header">  
+              <h4 class="modal-title" style="text-align: center">Update Screen Details</h4>  
+             </div> 
+            <!-- Modal body -->  
+            
+            <div class="modal-body" >
+              <div>
+                <input type="text" placeholder="Enter screen name" id="name" #screenname="ngModel" name="name" [(ngModel)]="screenGet.screenName"  class="form-control" required >
+                <div class="alert alert-danger" *ngIf="screenname.invalid&&screenname.touched ">Screen name is required </div> 
+              </div>
+              <br>
+              <div>      
+                <input type="number" placeholder="Enter total number of row" id="screenRow" #screenrow="ngModel" name="screenRow" [(ngModel)]="screenGet.screenRows"   class="form-control" required>
+                <div class="alert alert-danger" *ngIf="screenrow.invalid&&screenrow.touched ">Screen row  is required </div>   
+              </div>
+              <br>
+              <br>
+              <div>      
+                <input type="number" placeholder="Enter total number of column" id="screenColumn" #screencolumn="ngModel" name="screenColumn" [(ngModel)]="screenGet.screenColumns"   class="form-control" required>
+                <div class="alert alert-danger" *ngIf="screencolumn.invalid&&screencolumn.touched ">Screen column is required </div>   
+              </div>
+              <br>
+              
+          
+          
+                
+              <div>
+              <input type="submit" value="Add Screen" class="btn btn-danger" [disabled]="!frm.valid" >
+            </div>
+
+            </div>
+
+        </form>
+      </div>
+    </div>
+  </div>

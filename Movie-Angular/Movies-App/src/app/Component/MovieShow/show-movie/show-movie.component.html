@@ -1,0 +1,95 @@
+<div class="container">
+
+  <nav class="navbar navbar-dark bg-dark">
+
+   
+    <div class="container-fluid" class="nav-item1">
+      <div class="nav-flex-item1" >No Time To Die</div>
+        <div class="nav-flex-item2">
+        <div class="nav-flex-item2h"><i class="fal fa-camera-movie"></i></div>
+        <div class="nav-flex-item2h"> <i class="fas fa-heart"></i><strong>81%</strong></div>
+        <div class="nav-flex-item2h"><button>Action</button></div>
+        <div class="nav-flex-item2h"><button>Thriller</button></div>
+        <div class="nav-flex-item2h"><button>Horror</button></div>
+        <div class="nav-flex-item2h">Oct 14, 2021</div>
+        <div class="nav-flex-item2h"><i class="fas fa-clock"></i>1 hrs 30 mins</div></div>
+
+    </div>
+    <div class="container-fluid" class="nav-item2">
+      <img src="/src/assets/Home-img/cartoons/coco.jpg" alt="">
+      <img src="/src/assets/Home-img/cartoons/coco.jpg" alt="">
+      <img src="/src/assets/Home-img/cartoons/coco.jpg" alt="">
+      <img src="/src/assets/Home-img/cartoons/coco.jpg" alt="">
+    </div>
+  </nav>
+
+
+  <div class="container-item1">
+    <div id="item1"><i class="fa fa-mobile-alt"></i>M-Ticket Available</div>
+    <div id="item2"><i class="fal fa-burger-soda"></i>Food & Beverages Available</div>
+    <div id="item3">------</div>
+  </div>
+  
+  <div class="container-item2">
+    <div class="item-2" id="item4"></div>
+    <div class="item-2" id="item4"></div>
+    <div class="item-2" id="item4"> <i class="fas fa-circle"></i>Available</div>
+    <div class="item-2" id="item5"><i class="fas fa-circle"></i>Fast Filling</div>
+    <div class="item-2" id="item6"><i class="fas fa-circle"></i>Substitute language</div>
+    <hr>
+  </div>
+  
+  <!-- <hr> -->
+  <div class="container-item3" *ngFor= "let show of showDetail">
+    <div id="item7"><i class="far fa-heart"></i>{{show.theatreName}} : {{show.theatreCity}}</div>
+    <div class="info-icon"  id="item8"> <i class="fa fa-info"> </i><strong> Info</strong></div>
+    <div class="flex-container">
+      <div class="flex-item" >
+        <button (click)="seatLayoutRedirection(show.screenId,show.showId)">{{show.showStartTime}}</button>
+       </div>
+     <!--<div class="flex-item">
+       <button>02:00 PM</button>
+     </div>
+     <div class="flex-item">
+       <button>04:00 PM</button>
+     </div>
+     <div class="flex-item">
+       <button>06:00 PM</button>
+     </div>
+     <div class="flex-item">
+       <button>08:00 PM</button>
+     </div> -->
+     <!-- <div class="cancle flex-item"> <i class="fas fa-circle"></i>Cancelation Available</div> -->
+    </div>
+    <hr>
+  </div>
+  <!-- <div class="container-item4">
+    <div id="item10"> <i class="far fa-heart"></i>PVR : Rama Magneto Mall</div>
+    <div class="info-icon" id="item11"><i class="fa fa-info"> </i><strong> Info</strong></div>
+    <div class="flex-container">
+      <div class="flex-item">
+        <button>01:00 PM</button>
+      </div>
+      <div class="flex-item">
+        <button>03:00 PM</button>
+      </div>
+      <div class="flex-item">
+        <button>06:00 PM</button>
+      </div>
+      <div class="flex-item">
+        <button>10:00 PM</button>
+      </div>
+      <div class="cancle flex-item"> <i class="fas fa-circle"></i>Cancelation Available</div>
+      
+     </div>  <hr>
+  </div> -->
+
+<p>Online Tickets → {{getCityName}} → Latest Movies in {{getCityName}}  → </p>
+<br> <br>
+<strong>LATEST MOVIES IN BILASPUR</strong>  
+  <p>Babloo Bachelor, Bhavai, Dune, Venom: Let There Be Carnage</p>
+  <br><br>
+  <p>Privacy Note</p>
+  <p>By using www.bookmyshow.com(our website), you are fully accepting the Privacy Policy available at https://bookmyshow.com/privacy governing your access to Bookmyshow and provision of services by Bookmyshow to you. If you do not accept terms mentioned in the Privacy Policy, you must not share any of your personal information and immediately exit Bookmyshow.</p>
+
+</div>

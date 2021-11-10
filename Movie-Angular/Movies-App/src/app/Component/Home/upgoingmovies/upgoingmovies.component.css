@@ -1,0 +1,27 @@
+.item-action a{
+    font-size: 16px;
+}
+
+ .hiddenBtn{
+    position: relative;
+    display: none;
+
+} 
+
+.hideBtn:hover .hiddenBtn{
+    display: block;
+    animation-name: moveUp;
+    animation-duration: .5s;
+}
+
+  
+  @keyframes moveUp {
+    0% {
+     
+        top: 60px;
+    }
+    100% {
+        
+        top: 0px;
+    }
+  }

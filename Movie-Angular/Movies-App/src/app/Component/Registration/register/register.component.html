@@ -1,0 +1,36 @@
+<section class="col-md-4 mx-auto">
+    <h2 class="text-center">Register</h2>
+    <form method="POST" #frm="ngForm" (ngSubmit)="CreateUser()">
+
+        <div>username</div>
+        <div> <input type="text" name="bkid" [(ngModel)]="userRegistration.userName" #bkid="ngModel" class="form-control" required ></div>
+        <div class="alert alert-danger" *ngIf="bkid.invalid && bkid.touched">user id is required</div>
+  
+        <div>Email</div>
+        <div> <input type="email" name="bkEmail" [(ngModel)]="userRegistration.userEmail" #bkEmail="ngModel" class="form-control"required></div>
+        <div class="alert alert-danger" *ngIf="bkEmail.invalid && bkEmail.touched">Email is required</div>
+  
+        <div>password</div>
+        <div> <input type="password" name="bkPass" [(ngModel)]="userRegistration.userPassword" #bkPass="ngModel" class="form-control"required></div>
+        <div class="alert alert-danger" *ngIf="bkPass.invalid && bkPass.touched">password is required</div>
+
+        
+        <div>Address</div>
+        <div> <input type="text" name="bkAddress" [(ngModel)]="userRegistration.userAddress" #bkAddress="ngModel" class="form-control"required></div>
+        <div class="alert alert-danger" *ngIf="bkAddress.invalid && bkAddress.touched">Address is required</div>
+    
+        
+        <div>Mobile Number</div>
+        <div> <input type="text" name="bkMobile" [(ngModel)]="userRegistration.userMobile" #bkMobile="ngModel" class="form-control"required></div>
+        <div class="alert alert-danger" *ngIf="bkMobile.invalid && bkMobile.touched">Address is required</div>
+    
+
+        
+        <div class="mt-2 text-center"> <input type="submit" value="Register" [disabled]="!frm.valid"  class="btn btn-danger"></div>
+
+
+        
+    </form>
+    
+    </section>
+

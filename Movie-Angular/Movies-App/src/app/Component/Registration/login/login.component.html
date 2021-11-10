@@ -1,0 +1,19 @@
+<section class="col-md-4 mx-auto">
+    <h2 class="text-center">Login</h2>
+    <form #frm="ngForm" (ngSubmit)="doLogin()">
+        <div>username</div>
+        <div> <input type="text" name="bkid" [(ngModel)]="login.userName" #bkid="ngModel" class="form-control" required ></div>
+        <div class="alert alert-danger" *ngIf="bkid.invalid && bkid.touched">user id is required</div>
+    
+        <div>password</div>
+        <div> <input type="password" name="bkPass" [(ngModel)]="login.userPassword" #bkPass="ngModel" class="form-control"required></div>
+        <div class="alert alert-danger" *ngIf="bkPass.invalid && bkPass.touched">password is required</div>
+    
+        
+        <div class="mt-2 text-center"> <input type="submit" value="Login" [disabled]="!frm.valid"  class="btn btn-danger"></div>
+        
+    </form>
+
+     
+    
+    </section>

@@ -1,0 +1,51 @@
+<!--<h1>{{Movie|json}}</h1>
+<div>
+  <label>Select Movie</label>&nbsp;
+  <select name="my-select" [(ngModel)]="mySelect"  (change)="selectChange()">
+    <option [value]="item.movieId" *ngFor="let item of Movie">
+        {{item.movieName}}
+    </option>
+</select>
+
+</div>-->
+<div class="container">
+  <div class="col-md-6 mx-auto padding">
+    <h2 class="text-center">Enter Show Details</h2>
+  <form #frm="ngForm" (ngSubmit)="createShow()">
+   
+  <div>
+    <input type="text" placeholder="Enter show name" id="name" #showname="ngModel" name="name" [(ngModel)]="show.showName"  class="form-control" required >
+    <div class="alert alert-danger" *ngIf="showname.invalid&&showname.touched ">show name is required </div> 
+  </div><br>
+  <div>
+    <input type="text" placeholder="Enter show start time" id="showStartTime" #showStartTime="ngModel" name="showStartTime" [(ngModel)]="show.showStartTime"  class="form-control" required >
+    <div class="alert alert-danger" *ngIf="showStartTime.invalid&&showStartTime.touched ">show start time is required </div> 
+  </div><br>
+  <div>
+    <input type="text" placeholder="Enter show End time" id="showEndTime" #showEndTime="ngModel" name="showEndTime" [(ngModel)]="show.showEndTime"  class="form-control" required >
+    <div class="alert alert-danger" *ngIf="showEndTime.invalid&&showEndTime.touched ">show End time is required </div> 
+  </div><br>
+  
+
+<div>
+<label>Select Movie</label>&nbsp;
+<select name="my-select" [(ngModel)]="show.movie"  (change)="selectChange()">
+  <option [value]="item.movieId" *ngFor="let item of movie">
+      {{item.movieName}}
+  </option>
+</select>&nbsp;
+<label>Select Screen</label>&nbsp;
+  <select name="my-select" [(ngModel)]="show.screen"  (change)="selectScreen()">
+    <option [value]="item.screenId" *ngFor="let item of screen">
+       {{item.screenName}} 
+    </option>
+  </select>
+</div>
+
+  
+  <input type="submit" value="Add Show" class="btn btn-danger" [disabled]="!frm.valid" >
+</form>
+   
+</div>
+
+</div>
